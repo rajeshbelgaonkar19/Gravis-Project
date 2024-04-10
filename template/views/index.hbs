@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background-color: rgba(0, 255, 255, 0.601);
+}
+.container{
+    width:30%;
+    height: 500px;
+    border:2px solid black;
+    margin:70px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #a1e4f1;
+    box-shadow: 20px 15px 40px;
+}
+.input-div{
+    margin-left: 20px;
+    margin-right:20px;
+    text-align: center;
+    width:100%;
+}
+.input{
+    width:120%;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #dab4b48c;
+    margin-left: -50px;
+    margin-bottom: 10px;
+
+}
+.button{
+    display: block;
+    width:80px;
+    height: 30px;
+    border-radius: 6px;
+    color: white;
+    background-color: rgb(23, 78, 216);
+    cursor: pointer;
+    margin-left: -27px;
+    margin-top: 10px;
+}
+h4{
+    position: relative;
+    right:122px;
+    bottom:2px;
+}
+.heademail{
+    margin-left: 10px;
+}
+.headphone{
+    margin-left: -48px;
+}
+.headcon{
+    margin-left: 37px;
+}
+.security{
+    margin-bottom: 9px;
+    margin-left: -50px;
+    margin-top: -5px;
+} 
+.headuser{
+    margin-left: -24px;
+    margin-top: 10px;
+}
+.headpass{
+    margin-left: -27px;
+}
+.h1{
+    text-align: center;
+    margin: 20px 0 -50px 0;
+}</style>
+</head>
+<body>
+    <div class="container">
+        <form action="/pubData" method="POST">
+            <h1>Registration Form</h1>
+
+            <div class="username- input-div">
+            <h4 class="headuser">Username</h4>
+            <input 
+            type="text" 
+            class="username input" 
+            name="name" 
+            placeholder="  Username"
+            autocomplete="off"
+            >
+            </div>
+            <div class="email- input-div">
+            <h4 class="heademail">Email Address</h4>
+            <input 
+            type="email" 
+            name="email" 
+            class="email input" 
+            placeholder="  Email Id"
+            autocomplete="off"
+            >
+            <h5 class="security">We'll never share your email with anyone else</h5>
+            </div>
+            <div class="phone- input-div">
+            <h4 class="headphone">Phone</h4>
+            <input 
+            type="number" 
+            name="phone" 
+            class="phone input" 
+            placeholder="  Phone number"
+            autocomplete="off"
+            >
+            </div>
+            <div class="password- input-div">
+            <h4 class="headpass">Password</h4>
+            <input 
+            type="password" 
+            name="password" 
+            class="password input" 
+            placeholder="  Password"
+            autocomplete="off"
+            >
+            </div>
+            <div class="con-password- input-div">
+            <h4 class="headcon">Confirm Password</h4>
+            <input 
+            type="password" 
+            name="conpassword" 
+            class="con-password input" 
+            placeholder="  Confirm Password"
+            autocomplete="off"
+            >
+            </div>
+            <button class="button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

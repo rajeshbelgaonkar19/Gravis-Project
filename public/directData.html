@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Scatter Plot</title>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  #inputForm {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+</style>
+</head>
+<body>
+
+<div id="inputForm">
+  <h2>Enter Data for Scatter Plot</h2>
+  <div>
+    <label for="x1">X Values (Trace 1):</label>
+    <input type="text" id="x1" placeholder="Enter X values for Trace 1">
+  </div>
+  <div>
+    <label for="y1">Y Values (Trace 1):</label>
+    <input type="text" id="y1" placeholder="Enter Y values for Trace 1">
+  </div>
+  <div>
+    <label for="x2">X Values (Trace 2):</label>
+    <input type="text" id="x2" placeholder="Enter X values for Trace 2">
+  </div>
+  <div>
+    <label for="y2">Y Values (Trace 2):</label>
+    <input type="text" id="y2" placeholder="Enter Y values for Trace 2">
+</div>
+<button onclick="generatePlot()">Generate Plot</button>
+</div>
+
+<div id="myDiv"></div>
+
+<script>
+function generatePlot() {
+var x1Input = document.getElementById('x1').value.split(',').map(Number);
+var y1Input = document.getElementById('y1').value.split(',').map(Number);
+var x2Input = document.getElementById('x2').value.split(',').map(Number);
+var y2Input = document.getElementById('y2').value.split(',').map(Number);
+
+var trace1 = {
+  x: x1Input,
+  y: y1Input,
+  type: 'scatter'
+};
+
+var trace2 = {
+  x: x2Input,
+  y: y2Input,
+  type: 'scatter'
+};
+
+var data = [trace1, trace2];
+Plotly.newPlot('myDiv', data);
+}
+</script>
+
+</body>
+</html>

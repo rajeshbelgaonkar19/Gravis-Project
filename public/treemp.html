@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treemap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .chart {
+      width: 800px;
+      height: 600px;
+      margin: 20px auto;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDiv" class="chart"></div>
+  <form id="dataForm">
+    <label for="data">Enter Data:</label>
+    <input type="text" id="data" name="data" placeholder="Category1, Value1; Category2, Value2; ..." style="width: 400px;">
+    <button type="button" onclick="generateChart()">Generate Chart</button>
+  </form>
+  <form id="fileForm">
+    <label for="fileInput">Upload Excel File:</label>
+    <input type="file" id="fileInput" accept=".xlsx,.xls" onchange="handleFile(event)">
+    <button type="button" onclick="uploadFile()">Upload & Generate Chart</button>
+  </form>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+  <script>
+    function generateChart() {
+      var dataInput = document.getElementById('data').value.trim();
+      if (!dataInput) {
+        alert('Please enter data in the format: Category1, Value1; Category2, Value2; ...');
+        return;
+      }
+
+      var data = processData(dataInput);
+      if (!data) {
+        return;
+      }
+
+      var layout = {
+        annotations: [{
+          showarrow: false,
+          text: "branchvalues: <b>remainder</b>",
+          x: 0.25,
+          xanchor: "center",
+          y: 1.1,
+          yanchor: "bottom"
+          }, {
+          showarrow: false,
+          text: "branchvalues: <b>total</b>",
+          x: 0.75,
+          xanchor: "center",
+          y: 1.1,
+          yanchor: "bottom"
+          }]
+      };
+
+      Plotly.newPlot('myDiv', data, layout);
+    }
+
+    function handleFile(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const excelData = XLSX.utils.sheet_to_json(sheet);
+
+        processDataAndUpdateChart(excelData);
+      };
+
+      reader.readAsArrayBuffer(file);
+    }
+
+    function uploadFile() {
+      document.getElementById('fileInput').click();
+    }
+
+    function processData(dataInput) {
+      const categoriesValues = dataInput.split(';').map(pair => pair.trim().split(','));
+      const labels = categoriesValues.map(pair => pair[0]);
+      const values = categoriesValues.map(pair => parseFloat(pair[1]));
+
+      if (labels.length !== values.length) {
+        alert('Mismatch in number of categories and values.');
+        return null;
+      }
+
+      const parents = labels.map(() => '');
+
+      return [{
+        type: 'treemap',
+        labels: labels,
+        parents: parents,
+        values: values,
+        textinfo: "label+value+percent parent+percent entry",
+        domain: {"x": [0, 0.48]},
+        outsidetextfont: {"size": 20, "color": "#377eb8"},
+        marker: {"line": {"width": 2}},
+        pathbar: {"visible": false}
+      }];
+    }
+
+    function processDataAndUpdateChart(data) {
+      const labels = data.map(row => row.category);
+      const values = data.map(row => row.value);
+      const parents = labels.map(() => '');
+
+      var trace = {
+        type: "treemap",
+        labels: labels,
+        parents: parents,
+        values: values,
+        textinfo: "label+value+percent parent+percent entry",
+        domain: {"x": [0, 0.48]},
+        outsidetextfont: {"size": 20, "color": "#377eb8"},
+        marker: {"line": {"width": 2}},
+        pathbar: {"visible": false}
+      };
+
+      var layout = {
+        annotations: [{
+          showarrow: false,
+          text: "branchvalues: <b>remainder</b>",
+          x: 0.25,
+          xanchor: "center",
+          y: 1.1,
+          yanchor: "bottom"
+          }, {
+          showarrow: false,
+          text: "branchvalues: <b>total</b>",
+          x: 0.75,
+          xanchor: "center",
+          y: 1.1,
+          yanchor: "bottom"
+          }]
+      };
+
+      Plotly.newPlot('myDiv', [trace], layout);
+    }
+  </script>
+</body>
+</html>

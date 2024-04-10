@@ -1,0 +1,507 @@
+    *{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;  
+}
+body{
+    background:linear-gradient(to right,#45caff,#ff1b6b);
+    width: 100vw;
+}
+.nav-up{
+    flex-basis: 15%;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+}
+.image{
+    width: 120px;
+}
+.con-left
+{
+    border-radius: 30px;
+    margin-bottom: 10px;
+    margin:10px 10px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right,black,rgb(37, 0, 61));
+    text-align: start;
+    height: 95vh;
+    width: 35vh;
+    flex-basis: 15%;
+    
+
+}
+.nav-down{
+    flex-basis: 28%;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    margin-left: 7vh;
+    margin-top: -9vh;
+    
+    /* justify-content: center;
+    align-items: center; */
+    
+
+}
+.nav-down li{
+
+    margin-right: 50px;
+    font-size: 20px;
+    width: 120px;
+    margin-bottom: 4vh;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    transition: 0.5s;
+}
+.nav-down li a{
+    color: #fff;
+    text-decoration: none;
+}
+.nav-down li:hover{
+    font-size: 30px;
+    
+    background-color: blueviolet;
+    width: 75%;
+    border-radius: 20px;
+   
+}
+.list-container{
+    display: flex;
+    flex-direction: column;
+
+}
+.hline{
+    border: 3px solid rgba(138, 14, 255, 0.3) ;
+    position: relative;
+    right: 4.5vh;
+    width: 30vh;
+}
+.logo{
+    margin-top: 60px;
+    margin-left: 40px;
+    margin-bottom:120px;
+    
+    width: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.nav-center {
+    flex-basis: 55%;
+    text-align: center;
+}
+
+.glass{
+    position: relative;
+    height: 20vh;
+    z-index: 100;
+    width: 40vhpx;
+    left: 67%;
+    top: 1.2rem;
+    
+}
+
+.hero{
+   
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    display: flex;
+    height:95vh;
+    width: 200vh;
+    padding: 5px;
+  
+    
+}
+.herotext{
+    
+    font-size: 5rem;
+    color: white;
+    border: 2px solid white;
+    width: 650px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 100px auto;
+    
+}
+.herotext h5{
+    position: relative;
+    left: 160px;
+}
+.herotext h1{
+    position: relative;
+    left:-5px;
+    font-weight: 950;
+}
+.para-title{
+    margin-left: -2vh;
+    height: 15vh;
+    flex-basis: 15%;
+    font-size: 20px;
+}
+.para-title p{
+    font-size: 2rem;
+    width: 65vh;
+}
+.para-title h4{
+    color: rgb(73, 6, 136);
+    font-size: 3rem;
+}
+.SearchDiv{
+    display: flex;
+    flex-basis: 10%;
+ 
+    width: 80vw;
+    justify-content: space-between;
+    padding: 20px;
+    
+    align-items: center;
+  
+
+}
+
+.inputdiv input{
+    margin-top: -0.2rem;
+    
+}
+
+
+.fa-solid{
+    position: relative;
+    bottom: 2.6rem;
+    left: 25rem;
+    color: blueviolet;
+    font-size: 25px;
+    z-index: 100;
+  
+    
+}
+
+.sign{
+    height: 80px;
+    width: 80px;
+    /* position: relative;
+    left: 150px; */
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* con-center ka top wala box */
+
+.firstBox{
+    background: linear-gradient(to right,black,rgb(29, 2, 54));
+    transition: 0.5s;
+}
+.firstBox:hover{
+    border-bottom: 5px solid black;
+}
+.secondBox{
+    background-color:blue;
+    background: linear-gradient(to right,black,rgb(29, 2, 54));
+    
+   
+}
+.secondBox:hover{
+    border-bottom: 10px solid black;
+}
+.thirdBox{  
+    background: linear-gradient(to right,black,rgb(29, 2, 54));
+    border-radius: 30px;
+
+    /* margin:10px 10px; */
+    
+    
+}
+.thirdBox:hover{
+    border-bottom: 5px solid black;
+}
+
+/* con-center ke top ka end */
+
+/* con-cener ke Middle ke two box ka css */
+
+
+
+
+/* con-centre ke Middle ke two boxes ka css ka end */
+/* --------------------con-center------------------ */
+.con-center{
+    flex-basis: 80%;
+    background-color: rgba(29, 2, 54,0);
+    display: flex;
+    width: 120vh;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    margin:10px 10px;
+    flex-direction: column;
+    padding:1vh;
+    justify-content: space-between;
+
+    
+}
+
+.con-right{
+    flex-basis:35%;
+    background-color: rgba(29, 2, 54,0);
+    border-radius: 30px;
+   
+
+    margin-top: 2vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 74vh;
+    
+    
+}
+
+/* ------------------ */
+.Box:hover{
+    border-bottom: 5px solid white;
+    
+}
+
+
+
+.main{
+    /* flex-basis: 80%; */
+    display: flex;
+    flex-direction: column;
+    width:200vh;
+    height: 100vh;
+    justify-content: space-between;
+  
+}
+.SearchDiv input{
+    width: 70vh;
+    flex-basis: 35%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    
+}
+
+.mainUI{
+    display: flex;
+    flex-basis: 80%;
+    /* margin-top: -40px; */
+    width: 185vh;
+    
+    padding-bottom: 0.7rem;
+    height: 50vh;
+   
+    
+
+}
+
+.top_box{
+    display: flex;
+    flex-basis: 30%;
+   
+    border-radius: 15px;
+    height: 20vh;
+    width:98%;
+}
+.middle_box{
+    border-color: cyan;
+    flex-basis:65%;
+    width: 120vh;
+    /* margin-bottom: 2vh; */
+    background: linear-gradient(to right,black,rgb(55, 0, 92));
+    border-bottom: white;
+    border-radius: 15px;
+    transition: 0.5s;
+
+}
+.bottom_box{
+    flex-basis: 35%;
+    transition: 0.5s;
+    width: 125vh;
+    border-radius: 15px;
+    background: linear-gradient(to right,black,rgb(87, 1, 145));
+    width: 100%;
+    height: 200px;
+    transition: 0.5s;
+
+}
+
+.middle_box:hover{
+    border-bottom: 5px solid white;
+}
+
+.bottom_box:hover{
+    border-bottom: 5px solid white;
+}
+
+
+/*  RAJESH ONLY NO ONE ENTER HERE */
+.upperbox{
+   
+    border-radius:15px ;
+    width: 100%;
+    height: 50%;
+    background-color: rgb(29, 2, 54);
+    /* background: url(speed.png); */
+    background-size:500px;
+    display: flex;
+    
+    /* text-align: center; */
+    align-items: center;
+}
+.lowerbox{
+    border-radius: 15px;
+    width: 100%;
+  
+    height: 46%;
+    background-color: rgb(29, 2, 54);
+}
+.con-right{
+    padding:3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* EXIT */
+
+
+/*SLIDER KA CSS HE.... KOI NAHI AANA IDHAR.....  */
+.imgdiv{
+    display: flex;
+    width: 200px;
+
+}
+.imgdiv span{
+    flex-basis: 20%;
+}
+.gallery{
+    width: 45vw;
+    display: flex;
+    overflow-x: scroll;
+    position:relative;
+    left: 4rem;
+    /* bottom: 20px; */
+}
+.gallery div{
+    width:100%;
+    /* display: grid; 
+    grid-template-columns: auto auto auto; 
+    grid-gap: 20px; */
+    padding: 1vh;
+    flex: none;
+
+}
+.gallery div img{
+    /* border-radius: 50%; */
+    width: 20vh;
+    margin-right: 1.5rem;
+    filter: grayscale(100); 
+    transition: transform 0.5s;
+}
+.gallery::-webkit-scrollbar{
+    display:none;
+}
+.gallery-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+    width: 95%;
+    margin-left: -4vh;
+}
+#backBtn, #nextBtn{
+    
+    width:50px;
+    cursor:pointer;
+    /* margin:40px; */
+    position: relative;
+    bottom: 20px;
+}
+#backBtn{
+    margin-right: -0.5rem;
+    position: relative;
+    left: 2rem;
+    bottom: 0.5rem;
+}
+#nextBtn{
+    position: relative;
+    left: 4rem;
+    bottom: 0.5rem;
+}
+/* .imgNames{
+    margin-left: 0.7rem;
+} */
+.gallery div img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1,1.1);
+    transition: 0.5s;
+
+}
+.fa-solid.fa-user{
+    font-size: 45px;
+    position: relative;
+    top: 19.8px;
+    left: 20.3px;
+}
+/* AGAR KOI DEKHA TEAM SE OUT */
+
+
+
+
+/* SPEED TEST KA CSS  SAME RULES AS IMAGE*/
+.speed-test {
+    width:200px;
+    height: 100px;
+    position: relative;
+    left: 3.2rem;
+    bottom: 1rem;
+  }
+  
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .bg-semi-circle {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 10;
+  }
+  
+  .progress-semi-circle {
+    fill: none;
+    stroke: #007bff;
+    stroke-width: 10;
+    stroke-dasharray: 125.6; /* Circumference of 180 degrees */
+    stroke-dashoffset: 125.6;
+    transition: stroke-dashoffset 1s ease-in-out;
+  }
+  
+  .speed-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #007bff;
+  }
+  
+  input {
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 100px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+/* END */

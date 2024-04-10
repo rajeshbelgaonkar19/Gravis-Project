@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/cc8cd74914.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="con-left">
+            <div class="logo">
+                <a href="index.html" ><img  class="image"   src="GRAVIS_2-removebg-preview.png"></a>
+            </div>
+            <div class="menu">
+                <div class="nav-down">
+                    <div class="list-container">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/help">Help</a></li>
+                    <li><a href="/graphs">Graph</a></li>
+                    <hr class="hline">
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="main">
+     <div class="SearchDiv">
+         <div class="para-title">
+        <p>This is about page of
+            <br>
+            <h4>GraVis</h4>
+        </p>
+        </div>
+        
+         <div class="inputdiv">
+            <input type="text" placeholder= "  Visualize your dream " class="inputGraph">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        
+         <div class="sign">
+            <i class="fa-solid fa-user"></i>
+        </div> 
+    </div>
+    
+
+       
+    </div>
+    <script>
+
+        let scrollContainer = document.querySelector(".gallery");
+        let backBtn = document.getElementById("backBtn");
+        let nextBtn = document.getElementById("nextBtn");
+    
+        scrollContainer.addEventListener("wheel", (evt)=> {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehavior = "auto";
+        });
+    
+        nextBtn.addEventListener("click",()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft +=900;
+        });
+    
+        backBtn.addEventListener("click",()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -=900;
+        });
+    
+
+        function updateSpeed() {
+            const speedInput = document.getElementById('speed-input');
+            const speedValue = parseFloat(speedInput.value);
+            
+            if (isNaN(speedValue) || speedValue < 0 || speedValue > 100) {
+              alert('Please enter a valid speed between 0 and 100.');
+              return;
+            }
+            
+            const progressSemiCircle = document.querySelector('.progress-semi-circle');
+            const speedText = document.querySelector('.speed-text');
+            const circumference = 125.6; // Circumference of 180 degrees
+            const dashOffset = circumference * (1 - speedValue / 100);
+            progressSemiCircle.style.strokeDashoffset = dashOffset;
+            speedText.textContent = speedValue + '%';
+          }
+          
+      </script>
+    
+</body>
+</html>

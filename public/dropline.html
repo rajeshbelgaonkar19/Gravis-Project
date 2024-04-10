@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Chart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .chart {
+      width: 600px;
+      height: 400px;
+      margin: 20px auto;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDiv" class="chart"></div>
+  <form id="labelsForm">
+    <label for="fileInput">Upload Excel File:</label>
+    <input type="file" id="fileInput" accept=".xlsx,.xls" onchange="handleFile(event)">
+  </form>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+  <script>
+    function handleFile(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const excelData = XLSX.utils.sheet_to_json(sheet);
+
+        // Process data and update chart
+        processDataAndUpdateChart(excelData);
+      };
+
+      reader.readAsArrayBuffer(file);
+    }
+
+    function processDataAndUpdateChart(data) {
+      // Assuming data structure: { country: "Country Name", year: 2000, gdpPercap: 1234 }
+      const allCountryNames = data.map(row => row.country);
+      const allYear = data.map(row => row.year);
+      const allGdp = data.map(row => row.gdpPercap);
+      const listofCountries = [...new Set(allCountryNames)];
+
+      const countrySelector = document.getElementById('countrySelector');
+      countrySelector.innerHTML = ''; // Clear existing options
+      
+      listofCountries.forEach(country => {
+        const option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        countrySelector.appendChild(option);
+      });
+
+      setLineChart(data, listofCountries[0]); // Default chart with the first country
+    }
+
+    function setLineChart(data, chosenCountry) {
+      const currentGdp = data.filter(row => row.country === chosenCountry).map(row => row.gdpPercap);
+      const currentYear = data.filter(row => row.country === chosenCountry).map(row => row.year);
+
+      var trace1 = {
+        x: currentYear,
+        y: currentGdp,
+        mode: 'lines+markers',
+        marker: {
+          size: 12,
+          opacity: 0.5
+        }
+      };
+
+      var data = [trace1];
+
+      var layout = {
+        title:'Line and Scatter Plot',
+        height: 400,
+        width: 480
+      };
+
+      Plotly.newPlot('myDiv', data, layout);
+    }
+
+    document.getElementById('countrySelector').addEventListener('change', function(event) {
+      const chosenCountry = event.target.value;
+      setLineChart(excelData, chosenCountry);
+    });
+  </script>
+</body>
+</html>

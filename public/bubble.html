@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble Chart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .chart {
+      width: 600px;
+      height: 400px;
+      margin: 20px auto;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDiv" class="chart"></div>
+  <form id="labelsForm">
+    <label for="xLabel">X Label:</label>
+    <input type="text" id="xLabel" name="xLabel" required>
+    <label for="yLabel">Y Label:</label>
+    <input type="text" id="yLabel" name="yLabel" required>
+    <div id="dataInputs">
+      <div>
+        <label for="dataX">X Value:</label>
+        <input type="text" class="dataX" name="dataX" required>
+        <label for="dataY">Y Value:</label>
+        <input type="number" class="dataY" name="dataY" required>
+        <label for="dataZ">Z Value (Size):</label>
+        <input type="number" class="dataZ" name="dataZ" required>
+      </div>
+    </div>
+    <button type="button" onclick="addDataInput()">Add Data</button>
+    <label for="fileInput">Upload Excel File:</label>
+    <input type="file" id="fileInput" accept=".xlsx,.xls" onchange="handleFile(event)">
+    <button type="submit">Update Chart</button>
+  </form>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+    function addDataInput() {
+      var dataInputs = document.getElementById('dataInputs');
+      var newInput = document.createElement('div');
+      newInput.innerHTML = '<label for="dataX">X Value:</label>' +
+                           '<input type="text" class="dataX" name="dataX" required>' +
+                           '<label for="dataY">Y Value:</label>' +
+                           '<input type="number" class="dataY" name="dataY" required>' +
+                           '<label for="dataZ">Z Value (Size):</label>' +
+                           '<input type="number" class="dataZ" name="dataZ" required>';
+      dataInputs.appendChild(newInput);
+    }
+
+    function handleFile(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const excelData = XLSX.utils.sheet_to_json(sheet);
+
+        // Update input fields with Excel data
+        const dataInputs = document.getElementById('dataInputs');
+        dataInputs.innerHTML = '';
+        excelData.forEach(function(row) {
+          const newInput = document.createElement('div');
+          newInput.innerHTML = '<label for="dataX">X Value:</label>' +
+                                '<input type="text" class="dataX" name="dataX" value="' + row['X Value'] + '" required>' +
+                                '<label for="dataY">Y Value:</label>' +
+                                '<input type="number" class="dataY" name="dataY" value="' + row['Y Value'] + '" required>' +
+                                '<label for="dataZ">Z Value (Size):</label>' +
+                                '<input type="number" class="dataZ" name="dataZ" value="' + row['Z Value'] + '" required>';
+          dataInputs.appendChild(newInput);
+        });
+      };
+
+      reader.readAsArrayBuffer(file);
+    }
+
+    document.getElementById('labelsForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var xLabel = document.getElementById('xLabel').value;
+      var yLabel = document.getElementById('yLabel').value;
+      var dataXInputs = document.querySelectorAll('.dataX');
+      var dataYInputs = document.querySelectorAll('.dataY');
+      var dataZInputs = document.querySelectorAll('.dataZ');
+      var xValues = [];
+      var yValues = [];
+      var zValues = [];
+
+      dataXInputs.forEach(function(input) {
+        xValues.push(input.value);
+      });
+
+      dataYInputs.forEach(function(input) {
+        yValues.push(parseFloat(input.value));
+      });
+
+      dataZInputs.forEach(function(input) {
+        zValues.push(parseFloat(input.value));
+      });
+
+      var data = [{
+        x: xValues,
+        y: yValues,
+        marker: {
+          size: zValues
+        },
+        mode: 'markers',
+        type: 'scatter'
+      }];
+
+      var layout = {
+        xaxis: {
+          title: {
+            text: xLabel
+          }
+        },
+        yaxis: {
+          title: {
+            text: yLabel
+          }
+        }
+      };
+
+      Plotly.newPlot('myDiv', data, layout);
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+</body>
+</html>
