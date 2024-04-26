@@ -1,393 +1,233 @@
-    *{
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;  
-}
-body{
-    background:linear-gradient(to right,#45caff,#ff1b6b);
-    width: 100vw;
-}
-.nav-up{
-    flex-basis: 15%;
-    position: relative;
-    left: 10px;
-    top: 10px;
-    height: 100px;
-    width: 100px;
-    display: flex;
-}
-.image{
-    width: 120px;
-}
-.con-left
-{
-    border-radius: 30px;
-    margin-bottom: 10px;
-    margin:10px 10px;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to right,black,rgb(37, 0, 61));
-    text-align: start;
-    height: 95vh;
-    width: 35vh;
-    flex-basis: 15%;
-    
-
-}
-.nav-down{
-    flex-basis: 28%;
-    display: flex;
-    flex-direction: column;
-    height: 30vh;
-    margin-left: 7vh;
-    margin-top: -9vh;
-    
-    /* justify-content: center;
-    align-items: center; */
-    
-
-}
-.nav-down li{
-
-    margin-right: 50px;
-    font-size: 20px;
-    width: 120px;
-    margin-bottom: 4vh;
-    color: white;
-    text-decoration: none;
-    list-style: none;
-    text-align: center;
-    transition: 0.5s;
-}
-.nav-down li a{
-    color: #fff;
-    text-decoration: none;
-}
-.nav-down li:hover{
-    font-size: 30px;
-    
-    background-color: blueviolet;
-    width: 75%;
-    border-radius: 20px;
-   
-}
-.list-container{
-    display: flex;
-    flex-direction: column;
-
-}
-.hline{
-    border: 3px solid rgba(138, 14, 255, 0.3) ;
-    position: relative;
-    right: 4.5vh;
-    width: 30vh;
-}
-.logo{
-    margin-top: 60px;
-    margin-left: 40px;
-    margin-bottom:120px;
-    
-    width: 200px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-}
-.nav-center {
-    flex-basis: 55%;
-    text-align: center;
-}
-
-.glass{
-    position: relative;
-    height: 20vh;
-    z-index: 100;
-    width: 40vhpx;
-    left: 67%;
-    top: 1.2rem;
-    
-}
-
-.hero{
-   
-    height: 100vh;
-    width: 100vw;
-}
-
-.container{
-    display: flex;
-    height:95vh;
-    width: 200vh;
-    padding: 5px;
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;  
+  }
+  body{
+      background:linear-gradient(to right,#45caff,#ff1b6b);
+      background-color: black;
+  }
+  .nav-up{
+      flex-basis: 15%;
+      height: 100px;
+      width: 100px;
+      display: flex;
+  }
+  .image{
+      width: 180px;
+  }
+  .con-left
+  {
+      border-radius: 30px;
+      margin-bottom: 10px;
+      margin:10px 10px;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(29, 2, 54,1);
+      text-align: start;
+      height: 95vh;
+      width: 270px;
+      flex-basis: 15%;
+    z-index: 10000;
+  }
+  .nav-down{
+      flex-basis: 28%;
+      display: flex;
+      flex-direction: column;
+      height: 35vh;
+      margin-left: 50px;
+      
+      /* justify-content: center;
+      align-items: center; */
+      
   
-    
-}
-.herotext{
-    
-    font-size: 5rem;
-    color: white;
-    border: 2px solid white;
-    width: 650px;
-    text-align: center;
-    border-radius: 15px;
-    margin: 100px auto;
-    
-}
-.herotext h5{
-    position: relative;
-    left: 160px;
-}
-.herotext h1{
-    position: relative;
-    left:-5px;
-    font-weight: 950;
-}
-.para-title{
-    margin-left: -2vh;
-    height: 15vh;
-    flex-basis: 15%;
-    font-size: 20px;
-}
-.para-title p{
-    font-size: 2rem;
-    width: 65vh;
-}
-.para-title h4{
-    color: rgb(73, 6, 136);
-    font-size: 3rem;
-}
-.SearchDiv{
-    display: flex;
-    flex-basis: 10%;
- 
-    width: 80vw;
-    justify-content: space-between;
-    padding: 20px;
-    
-    align-items: center;
+  }
+  .nav-down a{
+    text-decoration: none;
+  }
+  .nav-down li{   
+    text-shadow: 5px 5px black; 
+      font-size:25px;
+      width: 120px;
+      margin-bottom: 60px;
+      color: white;
+      list-style: none;
+      text-align: center;
+      transition: 0.5s;
+  }
+  .nav-down li a{
+      color: #fff;
+  }
+  .nav-down li:hover{
+      font-size: 30px;
+      background-color: blueviolet;
+      width: 75%;
+      border-radius: 20px;
+      text-shadow: 0px 0px black;
+     
+  }
+  .list-container{
+      display: flex;
+      flex-direction: column;
+      margin-top:30px;
   
+  }
+  .hline{
+      border: 3px solid rgba(54, 0, 104,0.6) ;
+      width: 240px;
+      position: relative;
+      right: 15%;
+  }
+  .logo{
+    margin-top: 7%;
+    margin-left: 15%;
+      width: 200px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+  }
+  .nav-center {
+      flex-basis: 55%;
+      text-align: center;
+  }
+  .hero{
+      /* background: linear-gradient(#ADD8E6,#4169E1,#8A2BE2); */
+      /* background: linear-gradient(to right,#432818,#99582A,#FFE6A7); */
+      /* background: linear-gradient(to right,#45caff,#ff1b6b); */
+      height: 100vh;
+      width: 100vw;
+  }
+  /* .heroimage{
+      position: relative;
+      left: 70vw;
+      top: 5vh;
+      height: 100px;
+      width: 100px;
+  } */
+  .container{
+      display: flex;
+      height:100vh;
+      padding: 5px;
+      
+  }
+  .herotext{
+      
+      font-size: 20px;
+      color: white;
+      border: 2px solid white;
+      width: 650px;
+      text-align: center;
+      border-radius: 15px;
+  }
 
-}
-
-.inputdiv input{
-    margin-top: -0.2rem;
-    
-}
-
-
-.fa-solid{
+  .fa-solid.fa-user{
+    font-size: 35px;
     position: relative;
-    bottom: 2.6rem;
-    left: 25rem;
-    color: blueviolet;
+    top: 20%;
+    left: 27%;
+  }
+  .fa-solid.fa-magnifying-glass{
     font-size: 25px;
-    z-index: 100;
+    position: relative;
+    /* bottom: vh; */
+    top: 14%;
+    right: 4.6%;
+    color: grey;
+  }
+  .SearchDiv{
+      display: flex;
+      flex-direction: row;
+      flex-basis:5%;
+      width: 88%;
+      justify-content: space-between;
+      padding: 20px;
+      /* border-bottom: 1px solid black; */
   
-    
-}
+  }
+  .main{
+      display: flex;
+      flex-direction: column;
+      width: 92%;
+      justify-content: space-between;
+  }
+  .SearchDiv input{
+      width: 200px;
+      flex-basis: 35%;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 10px;
+     
+      
+  }
 
-.sign{
-    height: 80px;
-    width: 80px;
-    /* position: relative;
-    left: 150px; */
+  .sign{
+    height: 10vh;
+    width: 5vw;
+    position: relative;
+    left: 13%;
     border-radius: 50%;
     background-color: white;
 }
-
-/* con-center ka top wala box */
-
-.firstBox{
-    background: linear-gradient(to right,black,rgb(29, 2, 54));
-    transition: 0.5s;
-}
-.firstBox:hover{
-    border-bottom: 5px solid black;
-}
-.secondBox{
-    background-color:blue;
-    background: linear-gradient(to right,black,rgb(29, 2, 54));
-    
-   
-}
-.secondBox:hover{
-    border-bottom: 10px solid black;
-}
-.thirdBox{  
-    background: linear-gradient(to right,black,rgb(29, 2, 54));
-    border-radius: 30px;
-
-    /* margin:10px 10px; */
-    
-    
-}
-.thirdBox:hover{
-    border-bottom: 5px solid black;
-}
-
-/* con-center ke top ka end */
-
-/* con-cener ke Middle ke two box ka css */
-
-
-
-
-/* con-centre ke Middle ke two boxes ka css ka end */
-/* --------------------con-center------------------ */
-.con-center{
-    flex-basis: 80%;
-    background-color: rgba(29, 2, 54,0);
-    display: flex;
-    width: 120vh;
-    border-radius: 30px;
-    margin-bottom: 10px;
-    margin:10px 10px;
-    flex-direction: column;
-    padding:1vh;
-    justify-content: space-between;
-
-    
-}
-
-.con-right{
-    flex-basis:35%;
-    background-color: rgba(29, 2, 54,0);
-    border-radius: 30px;
-   
-
-    margin-top: 2vh;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 74vh;
-    
-    
-}
-
-/* ------------------ */
-.Box:hover{
-    border-bottom: 5px solid white;
-    
-}
-
-
-
-.main{
-    /* flex-basis: 80%; */
-    display: flex;
-    flex-direction: column;
-    width:200vh;
-    height: 100vh;
-    justify-content: space-between;
+  .mainUI{
+      display: flex;
+      flex-basis: 90%;
+      margin-top: -40px;
+  }
   
-}
-.SearchDiv input{
-    width: 70vh;
-    flex-basis: 35%;
-    height: 65px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
+  .para-title{
+      flex-basis: 15%;
+  }
+  .para-title p{
+   /* color: rgba(29, 2, 54,1); */
+   color: #45caff;
+   font-size:35px;
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+   text-shadow: 2px 2px black;
+   width: 500px;
+   font-weight: 500;
+  }
+  .para-title h4{
+    color: #ff1b6b;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* color: rgba(29, 2, 54,1); */
+      font-size: 35px;
+      text-shadow: 2px 2px black;
+  }
     
-}
-
-.mainUI{
-    display: flex;
-    flex-basis: 80%;
-    /* margin-top: -40px; */
-    width: 185vh;
-    
-    padding-bottom: 0.7rem;
-    height: 50vh;
-   
-    
-
-}
-
-.top_box{
-    display: flex;
-    flex-basis: 30%;
-   
-    border-radius: 15px;
-    height: 20vh;
-    width:98%;
-}
-.middle_box{
-    border-color: cyan;
-    flex-basis:65%;
-    width: 120vh;
-    /* margin-bottom: 2vh; */
-    background: linear-gradient(to right,black,rgb(55, 0, 92));
-    border-bottom: white;
-    border-radius: 15px;
-    transition: 0.5s;
-
-}
-.bottom_box{
-    flex-basis: 35%;
-    transition: 0.5s;
-    width: 125vh;
-    border-radius: 15px;
-    background: linear-gradient(to right,black,rgb(87, 1, 145));
-    width: 100%;
-    height: 200px;
-    transition: 0.5s;
-
-}
-
-.middle_box:hover{
-    border-bottom: 5px solid white;
-}
-
-.bottom_box:hover{
-    border-bottom: 5px solid white;
+  .icon_1{
+    margin-right: 20px;
 }
 
 
-/*  RAJESH ONLY NO ONE ENTER HERE */
-.upperbox{
-   
-    border-radius:15px ;
-    width: 100%;
-    height: 50%;
-    background-color: rgb(29, 2, 54);
-    /* background: url(speed.png); */
-    background-size:500px;
-    display: flex;
-    
-    /* text-align: center; */
-    align-items: center;
-}
-.lowerbox{
-    border-radius: 15px;
-    width: 100%;
-  
-    height: 46%;
-    background-color: rgb(29, 2, 54);
-}
-.con-right{
-    padding:3vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* EXIT */
 
 
-/*SLIDER KA CSS HE.... KOI NAHI AANA IDHAR.....  */
+
+
+
+
+
+
+
+
+
 .imgdiv{
     display: flex;
     width: 200px;
+    
 
 }
 .imgdiv span{
     flex-basis: 20%;
 }
 .gallery{
-    width: 45vw;
+    width: 50vw;
+    /* height: 50vh; */
     display: flex;
     overflow-x: scroll;
     position:relative;
-    left: 4rem;
+    left: 14rem;
+    top: 7rem;
     /* bottom: 20px; */
 }
 .gallery div{
@@ -424,16 +264,17 @@ body{
     /* margin:40px; */
     position: relative;
     bottom: 20px;
+    top: 7rem;
 }
 #backBtn{
     margin-right: -0.5rem;
     position: relative;
-    left: 2rem;
+    left: 13rem;
     bottom: 0.5rem;
 }
 #nextBtn{
     position: relative;
-    left: 4rem;
+    left: 13.8rem;
     bottom: 0.5rem;
 }
 /* .imgNames{
@@ -447,61 +288,208 @@ body{
 
 }
 .fa-solid.fa-user{
-    font-size: 45px;
-    position: relative;
-    top: 19.8px;
-    left: 20.3px;
+    font-size: 38px;
+    color: blueviolet;
 }
-/* AGAR KOI DEKHA TEAM SE OUT */
 
 
 
 
-/* SPEED TEST KA CSS  SAME RULES AS IMAGE*/
-.speed-test {
-    width:200px;
-    height: 100px;
-    position: relative;
-    left: 3.2rem;
-    bottom: 1rem;
-  }
-  
-  svg {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  RAJESH ONLY NO ONE ENTER HERE */
+  /* .upperbox{
+    display: flex;
+    justify-content: right;
+    align-items:top;
+    border-radius:15px ;
     width: 100%;
-    height: 100%;
-  }
+    height: 48%;
+    background-color: rgb(29, 2, 54);
+    background: url(speed.png);
+    background-size:500px;
+}
+.lowerbox{
+    border-radius: 15px;
+    width: 100%;
+    height: 48%;
+    background-color: rgb(29, 2, 54);
+}
+.con-right{
+    padding:24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+/* EXIT */
+
+
+
+
+
+
+
+
+
+
+  /* .con-right-right{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      background-color: rgba(29, 2, 54,0);
+      border-radius: 15px;
+      margin-top: 35px;
+      height: 92%;
+      flex-basis: 13%;
+      margin-right: 20px;
+      padding: 20px;
+      
   
-  .bg-semi-circle {
-    fill: none;
-    stroke: #f0f0f0;
-    stroke-width: 10;
   }
-  
-  .progress-semi-circle {
-    fill: none;
-    stroke: #007bff;
-    stroke-width: 10;
-    stroke-dasharray: 125.6; /* Circumference of 180 degrees */
-    stroke-dashoffset: 125.6;
-    transition: stroke-dashoffset 1s ease-in-out;
+  .firstBall{
+      background-color: red;
+      width: 160px;
+      border-radius: 50%;
+      height: 160px;
   }
-  
-  .speed-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    color: #007bff;
+  .secondBall{
+      background-color: yellow;
+      width: 160px;
+      border-radius: 50%;
+      height: 160px;
   }
-  
-  input {
-    margin-top: 20px;
-    margin-left: 25px;
-    width: 100px;
+  .thirdBall{
+      background-color: white;
+      width: 160px;
+      border-radius: 50%;
+      height: 160px;
   }
-  
-  button {
-    margin-top: 10px;
+  .fourthball{
+      background-color: rgba(138, 14, 255, 1);
+      display: flex;
+      width: 200px;
+      height: 200px;
+      margin-right: 80px;
   }
-/* END */
+  .f-1ball{
+      background-color: blue;
+      top: 50px;
+      left:35px
+  }
+  .f-2ball{
+      background-color: white;
+      right: 5px;
+      
+  }
+  .f-3ball{
+      background-color: black;
+      top: 50px;
+      right:35px
+  }
+  .ball{
+      width:120px;
+      height: 95px;
+      position: relative;
+      border-radius: 50%;
+  }
+  a{
+      text-decoration: none;
+  }
+  .Bigball{
+      width: 160px;
+      height: 160px;
+      
+  } */
+
+
+
+
+
+
+
+
+
+/* 
+
+  body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+} */

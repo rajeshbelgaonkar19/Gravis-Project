@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Graph Page</title>
     <link rel="stylesheet" href="graphs.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://kit.fontawesome.com/cc8cd74914.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-
 <body>
     <div class="container">
+        
         <div class="con-left">
             <div class="logo">
                 <a href="index.html" ><img  class="image"   src="GRAVIS_2-removebg-preview.png"></a>
@@ -18,79 +19,75 @@
             <div class="menu">
                 <div class="nav-down">
                     <div class="list-container">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/help">Help</a></li>
-                    <li><a href="/graphs">Graph</a></li>
+                        <li><a href="/"><i class="fa-solid fa-house icon_1"></i>Home</a></li>
+                        <li><a href="/about"><i class="fa-solid fa-circle-info icon_1"></i>About</a></li>
+                        <li><a href="/help"><i class="fa-solid fa-handshake-angle icon_1 "></i>Help</a></li>
+                        <li><a href="/graphs"><i class="fa-solid fa-square-poll-vertical icon_1"></i>Graph</a></li>
                     <hr class="hline">
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
+         
+        
         <div class="main">
-     <div class="SearchDiv">
-         <div class="para-title">
-        <p>Welcome to the 
+            <div class="SearchDiv">
+            <div class="para-title">
+            <p>Welcome To The Graph Section
             <br>
-            <h4>Graph Section</h4>
-        </p>
+            <h4>About The Graphs:-  </h4>
+            </p>
+            
+         </div>
+            
+         <input type="text" placeholder= "  Visualize your dream " class="inputGraph">
+         <i class="fa-solid fa-magnifying-glass glass"></i>
+             <div class="sign">
+                 <i class="fa-solid fa-user"></i>
+             </div>
+                     
+           </div>
+           <div class="graphbox">
+            <h1 class="graph_h1">Graphs We are Providing</h1>
+                <ul class="graphul">
+                    <li><i class="fa-solid fa-chart-simple icon"></i>Bar Graph</li>
+                    <li><i class="fa-solid fa-chart-pie icon"></i>Pie Chart</li>
+                    <li><span class="material-symbols-outlined ">
+                        scatter_plot
+                        </span>Scatter Plot</li>
+                    <li><span class="material-symbols-outlined icon">
+                        bubble_chart
+                        </span>Bubble Chart</li>
+                    <li><i class="fa-solid fa-chart-line icon"></i>Line Graph</li>
+                </ul>
+                <div class="main_border">
+                <div class="border">
+                    <h4 class="graph_h4">A bar graph visually represents data using rectangular bars with lengths proportional to the values they represent. </h4>
+                </div>
+                <div class="border">
+                    <h4 class="graph_h4">A pie chart displays data as a circular graph, with slices representing proportions of a whole, making it easy to visualize percentages or proportions at a glance.
+                    </h4>
+                </div>
+                <div class="border">
+                    <h4 class="graph_h4">A scatter plot visualizes the relationship between two variables by plotting points on a graph, helping to identify correlations or patterns in the data.</h4>
+                </div>
+                <div class="border">
+                    <h4 class="graph_h4">A bubble chart visualizes three dimensions of data by using bubbles to represent points on a graph</h4>
+                </div>
+                <div class="border">
+                    <h4 class="graph_h4">A line graph displays data points connected by lines, illustrating trends or changes over time, making it effective for showing continuous data trends.</h4>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
         
-         <div class="inputdiv">
-            <input type="text" placeholder= "  Visualize your dream " class="inputGraph">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-
-        
-         <div class="sign">
-            <i class="fa-solid fa-user"></i>
-        </div> 
-    </div>
-    
-
-       
-    </div>
-    <script>
-
-        let scrollContainer = document.querySelector(".gallery");
-        let backBtn = document.getElementById("backBtn");
-        let nextBtn = document.getElementById("nextBtn");
-    
-        scrollContainer.addEventListener("wheel", (evt)=> {
-            evt.preventDefault();
-            scrollContainer.scrollLeft += evt.deltaY;
-            scrollContainer.style.scrollBehavior = "auto";
-        });
-    
-        nextBtn.addEventListener("click",()=>{
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft +=900;
-        });
-    
-        backBtn.addEventListener("click",()=>{
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft -=900;
-        });
-    
-
-        function updateSpeed() {
-            const speedInput = document.getElementById('speed-input');
-            const speedValue = parseFloat(speedInput.value);
-            
-            if (isNaN(speedValue) || speedValue < 0 || speedValue > 100) {
-              alert('Please enter a valid speed between 0 and 100.');
-              return;
-            }
-            
-            const progressSemiCircle = document.querySelector('.progress-semi-circle');
-            const speedText = document.querySelector('.speed-text');
-            const circumference = 125.6; // Circumference of 180 degrees
-            const dashOffset = circumference * (1 - speedValue / 100);
-            progressSemiCircle.style.strokeDashoffset = dashOffset;
-            speedText.textContent = speedValue + '%';
-          }
+       </div>
           
-      </script>
+    </div>
+        
+        
     
+
 </body>
 </html>

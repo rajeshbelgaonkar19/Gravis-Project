@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Help Page</title>
     <link rel="stylesheet" href="help.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://kit.fontawesome.com/cc8cd74914.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <div class="container">
+        
         <div class="con-left">
             <div class="logo">
                 <a href="index.html" ><img  class="image"   src="GRAVIS_2-removebg-preview.png"></a>
@@ -18,79 +17,63 @@
             <div class="menu">
                 <div class="nav-down">
                     <div class="list-container">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/help">Help</a></li>
-                    <li><a href="/graphs">Graph</a></li>
+                    <li><a href="/"><i class="fa-solid fa-house icon_1"></i>Home</a></li>
+                    <li><a href="/about"><i class="fa-solid fa-circle-info icon_1"></i>About</a></li>
+                    <li><a href="/help"><i class="fa-solid fa-handshake-angle icon_1 "></i>Help</a></li>
+                    <li><a href="/graphs"><i class="fa-solid fa-square-poll-vertical icon_1"></i>Graph</a></li>
                     <hr class="hline">
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
+         
+        
         <div class="main">
-     <div class="SearchDiv">
-         <div class="para-title">
-        <p>This is 
+            <div class="SearchDiv">
+            <div class="para-title">
+            <p>Welcome To Help Page
             <br>
-            <h4>Help Section</h4>
-        </p>
-        </div>
-        
-         <div class="inputdiv">
+            <h4>Contact Info:-</h4>
+            </p>
+            
+         </div>
+            
             <input type="text" placeholder= "  Visualize your dream " class="inputGraph">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass glass"></i>
+                <div class="sign">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                     
+           </div>
+           <div class="helpbox">
+            <div class="helpfirst">
+                <h1 class="helph1">Our Info:-</h1>
+                <ul class="helpul">
+                    
+                    <li><i class="fa-solid fa-envelope icon"></i>brvs@gmail.com</li>
+                    <li><i class="fa-solid fa-phone-volume icon"></i>9969408674</li>
+                    <li><a href=""><i class="fa-brands fa-linkedin icon"></i>Linked In</a></li>
+                </ul>
+            </div>
+            <div class="helpsecond">
+                <h1 class="faqh1">FAQ's</h1>
+                <ol class="faqol">
+                    <li>How to Use Your Website</li>
+                    <li>Which Languages Did You use</li>
+                    <li>How to Use Bar Graph</li>
+                    <li>How to Upload My Excel Sheet</li>
+                    <li>In Which Section Can I see about the Graphs Information</li>
+                </ol>
+            </div>
+            </div>
         </div>
-
         
-         <div class="sign">
-            <i class="fa-solid fa-user"></i>
-        </div> 
-    </div>
-    
-
-       
-    </div>
-    <script>
-
-        let scrollContainer = document.querySelector(".gallery");
-        let backBtn = document.getElementById("backBtn");
-        let nextBtn = document.getElementById("nextBtn");
-    
-        scrollContainer.addEventListener("wheel", (evt)=> {
-            evt.preventDefault();
-            scrollContainer.scrollLeft += evt.deltaY;
-            scrollContainer.style.scrollBehavior = "auto";
-        });
-    
-        nextBtn.addEventListener("click",()=>{
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft +=900;
-        });
-    
-        backBtn.addEventListener("click",()=>{
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft -=900;
-        });
-    
-
-        function updateSpeed() {
-            const speedInput = document.getElementById('speed-input');
-            const speedValue = parseFloat(speedInput.value);
-            
-            if (isNaN(speedValue) || speedValue < 0 || speedValue > 100) {
-              alert('Please enter a valid speed between 0 and 100.');
-              return;
-            }
-            
-            const progressSemiCircle = document.querySelector('.progress-semi-circle');
-            const speedText = document.querySelector('.speed-text');
-            const circumference = 125.6; // Circumference of 180 degrees
-            const dashOffset = circumference * (1 - speedValue / 100);
-            progressSemiCircle.style.strokeDashoffset = dashOffset;
-            speedText.textContent = speedValue + '%';
-          }
+       </div>
           
-      </script>
+    </div>
+        
+        
     
+
 </body>
 </html>

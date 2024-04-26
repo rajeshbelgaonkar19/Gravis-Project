@@ -5,19 +5,16 @@
   }
   body{
       background:linear-gradient(to right,#45caff,#ff1b6b);
-      width: 95vh;
+      background-color: black;
   }
   .nav-up{
       flex-basis: 15%;
-      position: relative;
-      left: 10px;
-      top: 10px;
       height: 100px;
       width: 100px;
       display: flex;
   }
   .image{
-      width: 120px;
+      width: 180px;
   }
   .con-left
   {
@@ -26,35 +23,34 @@
       margin:10px 10px;
       display: flex;
       flex-direction: column;
-      background: linear-gradient(to right,black,rgb(37, 0, 61));
+      background-color: rgba(29, 2, 54,1);
       text-align: start;
       height: 95vh;
-      width: 35vh;
+      width: 270px;
       flex-basis: 15%;
-      
-  
+    z-index: 10000;
   }
   .nav-down{
       flex-basis: 28%;
       display: flex;
       flex-direction: column;
-      height: 30vh;
-      margin-left: 7vh;
-      margin-top: -9vh;
+      height: 35vh;
+      margin-left: 50px;
       
       /* justify-content: center;
       align-items: center; */
       
   
   }
-  .nav-down li{
-  
-      margin-right: 50px;
-      font-size: 20px;
+  .nav-down a{
+    text-decoration: none;
+  }
+  .nav-down li{   
+    text-shadow: 5px 5px black; 
+      font-size:25px;
       width: 120px;
-      margin-bottom: 4vh;
+      margin-bottom: 60px;
       color: white;
-      text-decoration: none;
       list-style: none;
       text-align: center;
       transition: 0.5s;
@@ -64,28 +60,27 @@
   }
   .nav-down li:hover{
       font-size: 30px;
-      text-decoration: underline rgb(153, 45, 255);
       background-color: blueviolet;
       width: 75%;
       border-radius: 20px;
+      text-shadow: 0px 0px black;
      
   }
   .list-container{
       display: flex;
       flex-direction: column;
+      margin-top:30px;
   
   }
   .hline{
-      border: 3px solid rgba(138, 14, 255, 0.3) ;
+      border: 3px solid rgba(54, 0, 104,0.6) ;
+      width: 240px;
       position: relative;
-      right: 4.5vh;
-      width: 30vh;
+      right: 15%;
   }
   .logo{
-      margin-top: 60px;
-      margin-left: 40px;
-      margin-bottom:120px;
-      
+    margin-top: 7%;
+    margin-left: 15%;
       width: 200px;
       text-align: center;
       display: flex;
@@ -95,398 +90,181 @@
       flex-basis: 55%;
       text-align: center;
   }
-  
-  .glass{
-      position: relative;
-      height: 20vh;
-      z-index: 100;
-      width: 40vhpx;
-      left: 67%;
-      top: 1.2rem;
-      
-  }
-  .fa-solid{
-      position: relative;
-      font-size: 20px;
-      z-index: 100;
-      
-      
-  }
   .hero{
-     
+      /* background: linear-gradient(#ADD8E6,#4169E1,#8A2BE2); */
+      /* background: linear-gradient(to right,#432818,#99582A,#FFE6A7); */
+      /* background: linear-gradient(to right,#45caff,#ff1b6b); */
       height: 100vh;
       width: 100vw;
   }
-  
+  /* .heroimage{
+      position: relative;
+      left: 70vw;
+      top: 5vh;
+      height: 100px;
+      width: 100px;
+  } */
   .container{
       display: flex;
-      height:95vh;
-      width: 80%;
+      height:100vh;
       padding: 5px;
-    
       
   }
   .herotext{
       
-      font-size: 5rem;
+      font-size: 20px;
       color: white;
       border: 2px solid white;
       width: 650px;
       text-align: center;
       border-radius: 15px;
-      margin: 100px auto;
-      
   }
-  .herotext h5{
-      position: relative;
-      left: 160px;
+
+  .fa-solid.fa-user{
+    color: blueviolet;
+    font-size: 35px;
+    position: relative;
+    top: 20%;
+    left: 27%;
   }
-  .herotext h1{
-      position: relative;
-      left:-5px;
-      font-weight: 950;
-  }
-  .para-title{
-      margin-left: -2vh;
-      height: 15vh;
-      flex-basis: 15%;
-      font-size: 20px;
-  }
-  .para-title p{
-      font-size: 2rem;
-      width: 65vh;
-  }
-  .para-title h4{
-      color: rgb(73, 6, 136);
-      font-size: 3rem;
+  .fa-solid.fa-magnifying-glass{
+    color: grey;
+    font-size: 25px;
+    position: relative;
+    top: 12%;
+    right: 5%;
   }
   .SearchDiv{
       display: flex;
-      flex-basis: 10%;
-   
-      width: 184vh;
+      flex-direction: row;
+      flex-basis:5%;
+      width: 88%;
       justify-content: space-between;
       padding: 20px;
-      
-      align-items: center;
-    
+      /* border-bottom: 1px solid black; */
   
   }
-  
-  .inputdiv input{
-      margin-top: -0.2rem;
-      
-  }
-  .sign{
-      height: 80px;
-      width: 80px;
-      /* position: relative;
-      left: 150px; */
-      border-radius: 50%;
-      background-color: white;
-  }
-  
-  /* con-center ka top wala box */
-  
-  .firstBox{
-      background: linear-gradient(to right,black,rgb(29, 2, 54));
-      transition: 0.5s;
-  }
-  .firstBox:hover{
-      border-bottom: 5px solid black;
-  }
-  .secondBox{
-      background-color:blue;
-      background: linear-gradient(to right,black,rgb(29, 2, 54));
-      
-     
-  }
-  .secondBox:hover{
-      border-bottom: 10px solid black;
-  }
-  .thirdBox{  
-      background: linear-gradient(to right,black,rgb(29, 2, 54));
-      border-radius: 30px;
-  
-      /* margin:10px 10px; */
-      
-      
-  }
-  .thirdBox:hover{
-      border-bottom: 5px solid black;
-  }
-  
-  /* con-center ke top ka end */
-  
-  /* con-cener ke Middle ke two box ka css */
-  
-  
-  .fa-solid{
-      position: absolute;
-      top: 50px;
-      right: 550px;
-      color: blueviolet;
-  }
-  
-  
-  
-  
-  /* con-centre ke Middle ke two boxes ka css ka end */
-  /* --------------------con-center------------------ */
-  .con-center{
-      flex-basis: 80%;
-      background-color: rgba(29, 2, 54,0);
-      display: flex;
-      width: 120vh;
-      border-radius: 30px;
-      margin-bottom: 10px;
-      margin:10px 10px;
-      flex-direction: column;
-      padding:1vh;
-      justify-content: space-between;
-  
-      
-  }
-  
-  .con-right{
-      flex-basis:35%;
-      background-color: rgba(29, 2, 54,0);
-      border-radius: 30px;
-     
-  
-      margin-top: 2vh;
-      flex-direction: row;
-      justify-content: space-evenly;
-      height: 74vh;
-      
-      
-  }
-  
-  /* ------------------ */
-  .Box:hover{
-      border-bottom: 5px solid white;
-      
-  }
-  
-  
-  
   .main{
-      /* flex-basis: 80%; */
       display: flex;
       flex-direction: column;
-      width:200vh;
-      height: 100vh;
+      width: 92%;
       justify-content: space-between;
-    
+      height: 95vh;
   }
   .SearchDiv input{
-      width: 70vh;
+      width: 200px;
       flex-basis: 35%;
-      height: 65px;
+      height: 50px;
       display: flex;
       justify-content: space-between;
       border-radius: 10px;
-      
-  }
-  
-  .mainUI{
-      display: flex;
-      flex-basis: 80%;
-      /* margin-top: -40px; */
-      width: 185vh;
-      
-      padding-bottom: 0.7rem;
-      height: 50vh;
      
       
-  
   }
-  
-  .top_box{
+  .sign{
+    height: 10vh;
+    width: 5vw;
+    position: relative;
+    left: 13%;  
+    border-radius: 50%;
+    background-color: white;
+}
+  .mainUI{
       display: flex;
-      flex-basis: 30%;
-      background-color:red;
-      border-radius: 15px;
-      height: 20vh;
-      width:98%;
-  }
-  .middle_box{
-      border-color: cyan;
-      flex-basis:65%;
-      width: 120vh;
-      /* margin-bottom: 2vh; */
-      background: linear-gradient(to right,black,rgb(55, 0, 92));
-      border-bottom: white;
-      border-radius: 15px;
-      transition: 0.5s;
-  
-  }
-  .bottom_box{
-      flex-basis: 35%;
-      transition: 0.5s;
-      width: 125vh;
-      border-radius: 15px;
-      background: linear-gradient(to right,black,rgb(87, 1, 145));
-      width: 100%;
-      height: 200px;
-      transition: 0.5s;
-  
+      flex-basis: 90%;
+      margin-top: -40px;
   }
   
-  .middle_box:hover{
-      border-bottom: 5px solid white;
+  .para-title{
+      flex-basis: 15%;
   }
-  
-  .bottom_box:hover{
-      border-bottom: 5px solid white;
+  .para-title p{
+    font-weight: 100;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    color: #45caff;
+      font-size: 40px;
+      text-shadow: 2px 2px black;
+      width: 500px;
   }
-  
-  
-  /*  RAJESH ONLY NO ONE ENTER HERE */
-  .upperbox{
-      /* display: flex; */
-      /* justify-content: right;
-      align-items:top; */
-      border-radius:15px ;
-      width: 100%;
-      height: 50%;
-      background-color: rgb(29, 2, 54);
-      /* background: url(speed.png); */
-      background-size:500px;
-      display: flex;
-      
-      /* text-align: center; */
-      align-items: center;
+  .para-title h4{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ff1b6b;
+      font-size: 50px;
+      text-shadow: 2px 2px black;
   }
-  .lowerbox{
-      border-radius: 15px;
-      width: 100%;
-    
-      height: 46%;
-      background-color: rgb(29, 2, 54);
-  }
-  .con-right{
-      padding:3vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
-  
-  /* EXIT */
-  
-  
-  /*SLIDER KA CSS HE.... KOI NAHI AANA IDHAR.....  */
-  .imgdiv{
-      display: flex;
-      width: 200px;
-  
-  }
-  .imgdiv span{
-      flex-basis: 20%;
-  }
-  .gallery{
-      width: 47vh;
-      display: flex;
-      overflow-x: scroll;
-      position:relative;
-      /* bottom: 20px; */
-  }
-  .gallery div{
-      width:100%;
-      /* display: grid; */
-      /* grid-template-columns: auto auto auto; */
-      /* grid-gap: 20px; */
-      padding: 2vh;
-      flex: none;
-  
-  }
-  .gallery div img{
-      border-radius: 50%;
-      width: 50%;
-      filter: grayscale(100); 
-      transition: transform 0.5s;
-  }
-  .gallery::-webkit-scrollbar{
-      display:none;
-  }
-  .gallery-wrap{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 10% auto;
-      width: 95%;
-      margin-left: -4vh;
-  }
-  #backBtn, #nextBtn{
-      
-      width:50px;
-      cursor:pointer;
-      margin:40px;
-      position: relative;
-      bottom: 20px;
-  }
-  .gallery div img:hover{
-      filter: grayscale(0);
-      cursor: pointer;
-      transform: scale(1.1,1.1);
-      transition: 0.5s;
-  
-  }
-  .fa-solid.fa-user{
-      font-size: 45px;
-      position: relative;
-      top: 19.8px;
-      left: 20.3px;
-  }
-  /* AGAR KOI DEKHA TEAM SE OUT */
-  
-  
-  
-  
-  /* SPEED TEST KA CSS  SAME RULES AS IMAGE*/
-  .speed-test {
-      width:200px;
-      height: 100px;
-      position: relative;
-      left: 33%;
-    }
-    
-    svg {
-      width: 100%;
-      height: 100%;
-    }
-    
-    .bg-semi-circle {
-      fill: none;
-      stroke: #f0f0f0;
-      stroke-width: 10;
-    }
-    
-    .progress-semi-circle {
-      fill: none;
-      stroke: #007bff;
-      stroke-width: 10;
-      stroke-dasharray: 125.6; /* Circumference of 180 degrees */
-      stroke-dashoffset: 125.6;
-      transition: stroke-dashoffset 1s ease-in-out;
-    }
-    
-    .speed-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 20px;
-      color: #007bff;
-    }
-    
-    input {
-      margin-top: 20px;
-      margin-left: 25px;
-      width: 100px;
-    }
-    
-    button {
-      margin-top: 10px;
-    }
-  /* END */
+.icon_1{
+    margin-right: 20px;
+}
+/* -------------------------Middle Box-------------------------- */
+.helpbox{
+    background-color: rgba(29, 2, 54,0);
+    width: 70vw;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* --------------FirstBox */
+.helpfirst{
+    background-color: rgba(29, 2, 54,1);
+    height: 35%;
+    border-radius: 15px;
+}
+.helpul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;   
+}
+.helph1{
+    font-size: 45px;
+    text-shadow: 5px 5px black;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #45caff;
+    margin-bottom: 30px;
+}
+.helpul li{
+    color: #ff1b6b;
+    font-size: 30px;
+    list-style: none;
+    /* margin-left: 5%; */
+}
+.helpul a{
+    color: #ff1b6b;
+    text-decoration: none;
+}
+.icon{
+    margin-right: 20px;
+    font-size: 30px;
+}
+/* ---------First Box End-------------- */
+
+/* ----------Second Box---------------- */
+.helpsecond{
+    background-color:rgba(29, 2, 54,1)   ;
+    height: 55%;
+    border-radius: 15px;
+}
+.faqh1{
+    text-shadow: 5px 5px black;
+    font-size: 45px;
+    color: #45caff;
+    text-align: center;
+    font-weight: 1000;
+}
+.faqol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.faqol li{
+    margin-left: 40px;
+    color: white;
+    font-size: 30px;
+    font-weight: 1000;
+}
+/* ---------Second Box End */
+/* -------------------------------------------------------------- */

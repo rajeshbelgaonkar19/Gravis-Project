@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Page</title>
     <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://kit.fontawesome.com/cc8cd74914.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+     </div>
     <div class="container">
         <div class="con-left">
             <div class="logo">
@@ -18,79 +21,58 @@
             <div class="menu">
                 <div class="nav-down">
                     <div class="list-container">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/help">Help</a></li>
-                    <li><a href="/graphs">Graph</a></li>
+                        <li><a href="/"><i class="fa-solid fa-house icon_1"></i>Home</a></li>
+                        <li><a href="/about"><i class="fa-solid fa-circle-info icon_1"></i>About</a></li>
+                        <li><a href="/help"><i class="fa-solid fa-handshake-angle icon_1 "></i>Help</a></li>
+                        <li><a href="/graphs"><i class="fa-solid fa-square-poll-vertical icon_1"></i>Graph</a></li>
                     <hr class="hline">
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="main">
      <div class="SearchDiv">
-         <div class="para-title">
-        <p>This is about page of
+        <div class="para-title">
+        <p>Welcome to the About Section
             <br>
-            <h4>GraVis</h4>
+            <h4>Info about us:-</h4>
         </p>
         </div>
+      
         
-         <div class="inputdiv">
-            <input type="text" placeholder= "  Visualize your dream " class="inputGraph">
-            <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder= "  Visualize your dream " class="inputGraph">
+        <i class="fa-solid fa-magnifying-glass"></i>   
+        
+        
+        <div class="sign">
+            <i class="fa-solid fa-user"></i>    
         </div>
-
         
-         <div class="sign">
-            <i class="fa-solid fa-user"></i>
-        </div> 
+           </div>
+
+           <!-- About us middle  -->
+     <div class="middle_box">
+        <div class="upper_main_box">
+            <h3>Team Members</h3>
+            <ul>
+            <li>Bhavesh</li>
+            <li>Vijay</li>
+            <li>Shantanu</li>
+            <li>Rajesh</li>
+            </ul> 
+        </div>
+        <div class="bottom_main_box">
+            <h1>About Our Project</h1>
+                <li>Graphical visualization leverages charts, and graphs to represent complex data in a visually intuitive manner, enhancing understanding and insights.
+                It transforms raw information into compelling visuals, enabling quick comprehension and analysis.</li>
+                <li>Through various techniques like histograms, scatter plots, and network diagrams, graphical visualization aids decision-making, pattern recognition, and communication of findings.
+                It's pivotal in fields like data science, business analytics, and scientific research, offering a powerful tool to explore trends, correlations, and outliers.
+                </li>
+                <li>By bridging the gap between data and understanding, graphical visualization fosters clarity, fosters innovation, and drives actionable insights.</li>
+        </div>
+     </div>
     </div>
-    
-
-       
-    </div>
-    <script>
-
-        let scrollContainer = document.querySelector(".gallery");
-        let backBtn = document.getElementById("backBtn");
-        let nextBtn = document.getElementById("nextBtn");
-    
-        scrollContainer.addEventListener("wheel", (evt)=> {
-            evt.preventDefault();
-            scrollContainer.scrollLeft += evt.deltaY;
-            scrollContainer.style.scrollBehavior = "auto";
-        });
-    
-        nextBtn.addEventListener("click",()=>{
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft +=900;
-        });
-    
-        backBtn.addEventListener("click",()=>{
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft -=900;
-        });
-    
-
-        function updateSpeed() {
-            const speedInput = document.getElementById('speed-input');
-            const speedValue = parseFloat(speedInput.value);
-            
-            if (isNaN(speedValue) || speedValue < 0 || speedValue > 100) {
-              alert('Please enter a valid speed between 0 and 100.');
-              return;
-            }
-            
-            const progressSemiCircle = document.querySelector('.progress-semi-circle');
-            const speedText = document.querySelector('.speed-text');
-            const circumference = 125.6; // Circumference of 180 degrees
-            const dashOffset = circumference * (1 - speedValue / 100);
-            progressSemiCircle.style.strokeDashoffset = dashOffset;
-            speedText.textContent = speedValue + '%';
-          }
-          
-      </script>
-    
+           <!--About us middle end  -->
 </body>
 </html>
+
