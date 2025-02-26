@@ -292,6 +292,18 @@
     color: blueviolet;
 }
 
+/* Your existing CSS styles */
+
+/* Media Query for small screens */
+@media only screen and (max-width: 768px) {
+   .con-left{
+    display: none;
+   }
+   body{
+    background:linear-gradient(to right,#45caff,#ff1b6b);
+   }
+}
+
 
 
 
