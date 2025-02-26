@@ -58,47 +58,28 @@ The project can be deployed using various methods:
 1. **Build the project**  
    ```sh
    npm run build
-Deploy the build/ folder to a hosting provider like Vercel, Netlify, or AWS.
-See the Deployment Guide for details.
-Learn More
-D3.js Documentation - https://d3js.org/
-Node.js Documentation - https://nodejs.org/
-Express.js Docs - https://expressjs.com/
-Troubleshooting
-Common Errors & Fixes
-❌ Port Already in Use
-🔹 Error: EADDRINUSE: address already in use
-💡 Fix: Kill the existing process:
 
-npx kill-port 4500
-❌ npm run build fails to minify
-This section has moved here:
-🔗 https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Deployment  
 
-Contributing
-Want to contribute? Follow these steps:
-
-Fork the repository
-Create a new branch (git checkout -b feature-name)
-Commit changes (git commit -m "Added new feature")
-Push (git push origin feature-name)
-Open a Pull Request
-Contact
-For any queries, contact: [Your Email or GitHub Profile]
-
-License
-This project is licensed under the MIT License.
+Deploy the `build/` folder to a hosting provider like **Vercel, Netlify, or AWS**.  
+See the **[Deployment Guide](https://facebook.github.io/create-react-app/docs/deployment)** for details.  
 
 ---
 
-### **📌 Steps to Add, Commit & Push the README File to GitHub**  
+## Learn More  
 
-#### **1️⃣ Create the `README.md` File**
-- Open **VS Code** and create a new file named `README.md`
-- Copy the above content and paste it inside `README.md`
-- Save the file
+- **D3.js Documentation** - [https://d3js.org/](https://d3js.org/)  
+- **Node.js Documentation** - [https://nodejs.org/](https://nodejs.org/)  
+- **Express.js Docs** - [https://expressjs.com/](https://expressjs.com/)  
 
-OR  
-Run this command in the terminal:
+---
+
+## Troubleshooting  
+
+### Common Errors & Fixes  
+
+#### ❌ Port Already in Use  
+🔹 **Error:** `EADDRINUSE: address already in use`  
+💡 **Fix:** Kill the existing process:  
 ```sh
-touch README.md
+npx kill-port 4500
